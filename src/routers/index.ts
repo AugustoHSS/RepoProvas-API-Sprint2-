@@ -6,6 +6,7 @@ import userRouter from "./userRouter.js";
 import instructorRouter from "./instructorRouter.js";
 
 const router = Router();
+
 router.use(userRouter);
 router.use(testRouter);
 router.use(categoryRouter);
