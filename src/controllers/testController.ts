@@ -18,8 +18,15 @@ async function createTest(req: Request, res: Response) {
   res.sendStatus(201)
 }
 
+async function addView(req: Request, res: Response) {
+  const { testId } = req.params
+  await testService.addView(testId)
+  res.sendStatus(200)
+}
+
 
 export default {
   find,
   createTest,
+  addView,
 };

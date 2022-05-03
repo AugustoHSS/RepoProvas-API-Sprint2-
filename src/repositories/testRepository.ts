@@ -58,9 +58,24 @@ async function getTeacherDisciplineId(disciplineId: number, teacherId: number) {
     }
   })
 }
+
+async function addView(testId: number) {
+
+  await prisma.test.update({
+    where: {
+      id: testId
+    },
+    data: {
+      views: { increment: 1 }
+    }
+
+  })
+}
+
 export default {
   getTestsByDiscipline,
   getTestsByTeachers,
   createTest,
-  getTeacherDisciplineId
+  getTeacherDisciplineId,
+  addView
 };

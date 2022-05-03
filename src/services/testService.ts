@@ -25,7 +25,13 @@ async function createTest(data: any) {
   await testRepository.createTest(data, teacherDisciplineId.id)
 }
 
+async function addView(testId: string) {
+  await testRepository.addView(parseInt(testId))
+}
+
+
 export default {
   find,
   createTest,
+  addView,
 };
