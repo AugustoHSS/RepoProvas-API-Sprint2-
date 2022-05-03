@@ -10,4 +10,11 @@ instructorRouter.get(
   instructorController.findMany
 );
 
+instructorRouter.get(
+  "/instructors",
+  ensureAuthenticatedMiddleware,
+  instructorController.findAll
+);
+
+
 export default instructorRouter;

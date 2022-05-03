@@ -15,6 +15,11 @@ async function findMany(disciplineId: number) {
   });
 }
 
+async function findAll() {
+  return prisma.teacher.findMany();
+}
+
 export default {
   findMany,
+  findAll,
 };
